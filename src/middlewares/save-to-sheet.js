@@ -27,7 +27,7 @@ const saveToSheet = (sheetName, newRowData) => {
         sheets.spreadsheets.values.append(
           {
             spreadsheetId,
-            range: `${sheetName}!A:A`,
+            range: `${sheetName}!A:D`,
             valueInputOption: 'USER_ENTERED',
             resource: {
               values: [newRowData],
