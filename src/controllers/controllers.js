@@ -1,5 +1,6 @@
 import sendMail from "../middlewares/send-email.js";
 import saveToSheet from "../middlewares/save-to-sheet.js";
+import logger from "../common/logger.js";
 
 const create = async (req, res) => {
     const {donorName, donorEmail, amount } = req.body;
@@ -25,9 +26,10 @@ const create = async (req, res) => {
         if (!sendResponse){
             return res.status(500).json({ message: 'could not send email, try later' });
         }
+        return res.status(200).json({ message: 'success' });
     }
     catch(err){
-        console.error(err.message);
+        logger.error(err.message);
         return res.status(500).json({message: err.message});
     }
 

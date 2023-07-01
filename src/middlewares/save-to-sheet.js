@@ -1,5 +1,6 @@
 import {google} from 'googleapis';
 import '../common/env.js'
+import logger from '../common/logger.js';
 
 // return a promise to handle save to sheet
 const saveToSheet = (sheetName, newRowData) => {
@@ -10,10 +11,10 @@ const saveToSheet = (sheetName, newRowData) => {
         process.env.PRIVATE_KEY,
         ['https://www.googleapis.com/auth/spreadsheets']
       );
-  
+
       client.authorize(function(err, tokens) {
         if (err) {
-          console.error('Error authenticating:', err);
+          logger.error('Error authenticating:', err);
           reject(err);
           return;
         }
@@ -35,11 +36,11 @@ const saveToSheet = (sheetName, newRowData) => {
           },
           (err, response) => {
             if (err) {
-              console.error('Error inserting row:', err);
+              logger.error('Error inserting row:', err);
               reject(err);
               return;
             }
-            console.log('Row inserted successfully.');
+            logger.info('Row inserted successfully.');
             resolve(response);
           }
         );

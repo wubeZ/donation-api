@@ -1,5 +1,6 @@
 import nodeMailer from 'nodemailer'
 import '../common/env.js'
+import logger from '../common/logger.js'
 
 const transporter = nodeMailer.createTransport({
   service: 'Gmail',
@@ -36,7 +37,7 @@ const sendMail = async (credentials) => {
     })
     return info
   } catch (error) {
-    console.error({ issue: 'email service down', error })
+    logger.error({ issue: 'email service down', error })
   }
 }
 
