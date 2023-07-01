@@ -12,7 +12,7 @@ Before running the API, ensure you have the following dependencies installed:
 
 ## Installation
 
-1. Clone this repository: `git clone <repository_url>`
+1. Clone this repository: `git clone https://github.com/wubeZ/donation-api.git`
 2. Install dependencies: `npm install`
 3. Configure environment variables by creating a `.env` file and adding necessary values (see `.env.example` for reference).
 4. Start the server: `npm start`
