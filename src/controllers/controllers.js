@@ -4,10 +4,6 @@ import logger from "../common/logger.js";
 
 const create = async (req, res) => {
     const {donorName, donorEmail, amount } = req.body;
-    if (!donorEmail || !donorName || !amount ){
-        return res.status(401).json({message: "enter all the feilds"})
-    }
-
     const timeStamp = new Date().toString();
 
     const newRowData = [timeStamp, donorName, donorEmail, amount];

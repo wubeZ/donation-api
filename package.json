@@ -13,6 +13,7 @@
   "dependencies": {
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "express-validator": "^7.0.1",
     "googleapis": "^120.0.0",
     "nodemailer": "^6.9.3",
     "pino": "^8.14.1",
