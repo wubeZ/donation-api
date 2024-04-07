@@ -1,12 +1,13 @@
 # Donation Management API
 
-The Donation Management API is a backend application that allows you to manage and track donations made to your organization. It provides functionality to store donation details in a Google Sheet and send confirmation emails to donors using Nodemailer.
+The Donation Management API is a backend application that seamlessly integrates with Stripe, enabling secure donation processing, management, and tracking of donations made to your organization. It provides functionality to store donation details in a Google Sheet and send confirmation emails to donors using Nodemailer.
 
 ## Prerequisites
 
 Before running the API, ensure you have the following dependencies installed:
 
 - Node.js
+- Stripe Account
 - Google Sheets API credentials (client email and private key)
 - Nodemailer configured with an email service provider (e.g., Gmail)
 
@@ -19,6 +20,7 @@ Before running the API, ensure you have the following dependencies installed:
 
 ## Features
 
+- Seamlessly integrate with Stripe for secure donation processing.
 - Create a new donation and store the details in a Google Sheet.
 - Send confirmation emails to donors using Nodemailer.
 
