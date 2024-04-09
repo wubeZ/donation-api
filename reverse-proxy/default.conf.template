@@ -1,0 +1,9 @@
+server {
+    server_name ${REVERSE_PROXY_HOST};
+    listen ${REVERSE_PROXY_PORT};
+    
+    location / {
+        proxy_pass http://${SERVER_HOST}:${SERVER_PORT}/;
+        proxy_http_version 1.1;
+    }
+}
