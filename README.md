@@ -14,9 +14,15 @@ Before running the API, ensure you have the following dependencies installed:
 ## Installation
 
 1. Clone this repository: `git clone https://github.com/wubeZ/donation-api.git`
-2. Install dependencies: `npm install`
-3. Configure environment variables by creating a `.env` file and adding necessary values (see `.env.example` for reference).
-4. Start the server: `npm start`
+
+#### Using Docker Compose to run using reverse-proxy
+1. Configure environment variables by creating a `.env` file and adding necessary values (see `.env.example` for reference).
+2. Run the docker-compose.yaml: `docker-compose up`
+
+#### Without reverse-proxy
+1. Install dependencies: `npm install`
+2. Configure environment variables by creating a `.env` file and adding necessary values (see `.env.example` for reference).
+3. Start the server: `npm start`
 
 ## Features
 
