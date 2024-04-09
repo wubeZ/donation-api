@@ -17,7 +17,9 @@ Before running the API, ensure you have the following dependencies installed:
 
 #### Using Docker Compose to run using reverse-proxy
 1. Configure environment variables by creating a `.env` file and adding necessary values (see `.env.example` for reference).
-2. Run the docker-compose.yaml: `docker-compose up`
+2. Run the docker-compose.yaml: `docker-compose up -d`
+   - You can also use make to run the docker-compose.yaml: `make run`
+     - You can see more inside [Makefile](https://github.com/wubeZ/donation-api/blob/main/Makefile). 
 
 #### Without reverse-proxy
 1. Install dependencies: `npm install`
