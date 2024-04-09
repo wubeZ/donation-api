@@ -1,0 +1,25 @@
+
+version: '3.9'
+services:
+    # Node
+    server:
+        image: server
+        container_name: ${SERVER_HOST}
+        build: 
+          context: ./
+          dockerfile: Dockerfile
+        env_file: .env
+        ports:
+            - ${SERVER_PORT}:${SERVER_PORT}
+      
+    # Nginx
+    reverse-proxy:
+        image: reverse-proxy
+        container_name: ${REVERSE_PROXY_HOST}
+        build:
+            context: ./reverse-proxy
+            dockerfile: Dockerfile
+        env_file: .env
+        restart: always
+        ports:
+            - ${REVERSE_PROXY_PORT}:${REVERSE_PROXY_PORT}

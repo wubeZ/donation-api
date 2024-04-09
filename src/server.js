@@ -23,8 +23,8 @@ app.use("*",(req, res) => {
     res.status(404).send({ error: 'unknown endpoint' })
 })
 
-const port = process.env.PORT;
+const port = process.env.SERVER_PORT;
 
 app.listen(port, ()=> {
-    logger.info(`Running in developement @ ${os.hostname} at port ${port}`)
+    logger.info(`Running in development @ ${os.hostname} at port ${port}`)
 });
