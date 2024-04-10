@@ -5,7 +5,7 @@ stop:
 	docker-compose down
 
 kill:
-	docker-compose down -v
+	docker-compose down -v --remove-orphans
 
 restart:
 	docker-compose restart
