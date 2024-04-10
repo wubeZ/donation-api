@@ -3,7 +3,10 @@ server {
     listen ${REVERSE_PROXY_PORT};
     
     location / {
-        proxy_pass http://${SERVER_HOST}:${SERVER_PORT}/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+
+        proxy_pass http://${SERVER_HOST}:${SERVER_PORT};
         proxy_http_version 1.1;
     }
 }

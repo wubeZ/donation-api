@@ -1,4 +1,3 @@
-
 version: '3.9'
 services:
     # Node
@@ -6,12 +5,15 @@ services:
         image: server
         container_name: ${SERVER_HOST}
         build: 
-          context: ./
-          dockerfile: Dockerfile
+            context: ./
+            dockerfile: Dockerfile
         env_file: .env
         ports:
             - ${SERVER_PORT}:${SERVER_PORT}
-      
+        volumes:
+            - ./src:/src
+            - server-v-node-modules:/node_modules
+    
     # Nginx
     reverse-proxy:
         image: reverse-proxy
@@ -23,3 +25,11 @@ services:
         restart: always
         ports:
             - ${REVERSE_PROXY_PORT}:${REVERSE_PROXY_PORT}
+        volumes:
+            - ./reverse-proxy/default.conf.template:/etc/nginx/templates/default.conf.template
+        depends_on:
+            - server
+
+volumes:
+    server-v-node-modules:
+        name: server-v-node-modules
