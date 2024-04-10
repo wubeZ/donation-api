@@ -8,8 +8,6 @@ services:
             context: ./
             dockerfile: Dockerfile
         env_file: .env
-        ports:
-            - ${SERVER_PORT}:${SERVER_PORT}
         volumes:
             - ./src:/src
             - server-v-node-modules:/node_modules
